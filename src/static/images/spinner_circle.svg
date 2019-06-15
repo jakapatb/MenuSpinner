@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000">
+  <defs>
+    <path id="prefix__spinner_circle-a" d="M499.777 820.555C322.617 820.555 179 676.938 179 499.777 179 322.617 322.617 179 499.777 179s320.778 143.617 320.778 320.777-143.617 320.778-320.778 320.778zM499.5 819C675.955 819 819 675.955 819 499.5S675.955 180 499.5 180 180 323.045 180 499.5 323.045 819 499.5 819z"/>
+    <linearGradient id="prefix__spinner_circle-b" x1="7.779%" x2="92.221%" y1="0%" y2="105.478%">
+      <stop offset="0%" stop-color="#F7618B"/>
+      <stop offset="100%" stop-color="#2A7AFF"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="prefix__spinner_circle-c" fill="#fff">
+      <use xlink:href="#prefix__spinner_circle-a"/>
+    </mask>
+    <use fill="#D8D8D8" opacity=".5" transform="matrix(-1 0 0 1 999.555 0)" xlink:href="#prefix__spinner_circle-a"/>
+    <g fill="url(#prefix__spinner_circle-b)" mask="url(#prefix__spinner_circle-c)">
+      <path d="M874 93H126v814h748z"/>
+    </g>
+  </g>
+</svg>
