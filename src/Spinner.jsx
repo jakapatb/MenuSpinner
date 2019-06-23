@@ -57,7 +57,7 @@ const Spinner = props => {
       return { x: addX, y: addY, distance: distance };
     });
     setState({ ...state, position: position });
-  }, [select, state, data]);
+  });
   return (
     <Circle setRotate={state.position[select]}>
       <svg
