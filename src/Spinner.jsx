@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const Circle = styled.div`
   svg {
+    user-select: none;
     left: -500px;
     position: absolute;
     transition: all 500ms;
@@ -14,9 +15,10 @@ const Circle = styled.div`
     fill: #2a7aff;
   }
   .node.active {
-    fill : #fff;
+    fill: #fff;
   }
   .text {
+   
     position: absolute;
     font-size: 36px;
     fill: #2a7aff;
@@ -25,7 +27,7 @@ const Circle = styled.div`
     transition: all 0.2s ease-in-out;
   }
   .text.active {
-    fill:#fff;
+    fill: #fff;
   }
   .btn {
     fill: #000;
@@ -107,8 +109,15 @@ const Spinner = props => {
                   "translate(" + x + " " + y + " ) rotate(" + distance + ")";
                 return (
                   <React.Fragment key={index}>
-                    <circle transform={transform} r="10" className={select===index?'node active':'node'}/>
-                    <text className={select===index?"text active":"text"} transform={transform}>
+                    <circle
+                      transform={transform}
+                      r="10"
+                      className={select === index ? "node active" : "node"}
+                    />
+                    <text
+                      className={select === index ? "text active" : "text"}
+                      transform={transform}
+                    >
                       <tspan x="35" y="12">
                         {item.name}
                       </tspan>

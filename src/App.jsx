@@ -88,7 +88,7 @@ const DataTest = [
 ];
 
 const App = () => {
-  const [select, setSelect] = useState(Math.round(DataTest.length / 2));
+  const [select, setSelect] = useState(Math.round(DataTest.length / 2)-1);
   return (
     <>
       <GlobalStyle />
