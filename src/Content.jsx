@@ -38,7 +38,7 @@ const Content = props => {
   return (
     <Container>
       <h2>Hero : {data[select].name}</h2>
-      <img src={data[select].image} />
+      <img src={data[select].image} alt="hero"/>
       <BoxInfo>
         <InfoStat>
           <InfoText>
