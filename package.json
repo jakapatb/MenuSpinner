@@ -15,7 +15,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "reac  t-app"
   },
   "browserslist": {
     "production": [
