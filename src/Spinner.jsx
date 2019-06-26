@@ -18,7 +18,6 @@ const Circle = styled.div`
     fill: #fff;
   }
   .text {
-   
     position: absolute;
     font-size: 36px;
     fill: #2a7aff;
@@ -41,27 +40,20 @@ const toRad = dec => {
 
 const Spinner = props => {
   const { select, setSelect, data } = props;
-  const [state, setState] = useState({
-    range: 180,
-    radius: 320,
-    number: data.length,
-    position: []
+  const range = 180;
+  const radius = 320;
+  const number = data.length;
+  const middle = { x: 500, y: 500 };
+  const angle = range / number;
+  let position = data.map((_, index) => {
+    const distance = angle * index;
+    const addX = middle.x + Math.cos(toRad(distance)) * radius;
+    const addY = middle.y + Math.sin(toRad(distance)) * radius;
+    return { x: addX, y: addY, distance: distance };
   });
 
-  useEffect(() => {
-    const { range, number, radius } = state;
-    const middle = { x: 500, y: 500 };
-    const angle = range / number;
-    let position = data.map((_, index) => {
-      const distance = angle * index;
-      const addX = middle.x + Math.cos(toRad(distance)) * radius;
-      const addY = middle.y + Math.sin(toRad(distance)) * radius;
-      return { x: addX, y: addY, distance: distance };
-    });
-    setState({ ...state, position: position });
-  },[state,data]);
   return (
-    <Circle setRotate={state.position[select]}>
+    <Circle setRotate={position[select]}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -102,7 +94,6 @@ const Spinner = props => {
           </g>
           <g>
             {data.map((item, index) => {
-              const { position } = state;
               if (position.length > 0) {
                 const { x, y, distance } = position[index];
                 const transform =
